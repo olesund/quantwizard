@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quant UX Research Academy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>📊 Quant UX Academy</h1>
+            <p class="tagline">Master quantitative research, surveys, and data science</p>
+            <div class="progress-summary" id="progressSummary">
+                <span id="overallProgress">0% Complete</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <button class="nav-btn active" data-section="home">Home</button>
+            <button class="nav-btn" data-section="learn">Learn</button>
+            <button class="nav-btn" data-section="practice">Practice</button>
+            <button class="nav-btn" data-section="challenges">Challenges</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- HOME SECTION -->
+        <section id="home" class="content-section active">
+            <div class="welcome-card">
+                <h2>Welcome to Your Learning Journey</h2>
+                <p>Build expertise in quantitative UX research and data science through interactive lessons, hands-on exercises, and fun challenges.</p>
+
+                <div class="learning-paths">
+                    <div class="path-card">
+                        <h3>📋 Survey Research</h3>
+                        <p>Master survey design, question writing, sampling, weighting, and analysis</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-track="surveys" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="path-card">
+                        <h3>📈 Statistical Analysis</h3>
+                        <p>Learn statistical reasoning, hypothesis testing, regression, and effect sizes</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-track="statistics" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="path-card">
+                        <h3>💻 Data Science Tools</h3>
+                        <p>Build skills in SQL, Python, R, and data visualization</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-track="programming" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="path-card">
+                        <h3>🔬 Research Design</h3>
+                        <p>Design rigorous studies, reduce bias, and ensure validity</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-track="research-design" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEARN SECTION -->
+        <section id="learn" class="content-section">
+            <h2>Learning Modules</h2>
+
+            <div class="module-category">
+                <h3>📋 Survey Research</h3>
+                <div class="lesson-grid" id="surveysLessons"></div>
+            </div>
+
+            <div class="module-category">
+                <h3>📈 Statistical Analysis</h3>
+                <div class="lesson-grid" id="statisticsLessons"></div>
+            </div>
+
+            <div class="module-category">
+                <h3>💻 Programming & Tools</h3>
+                <div class="lesson-grid" id="programmingLessons"></div>
+            </div>
+
+            <div class="module-category">
+                <h3>🔬 Research Design</h3>
+                <div class="lesson-grid" id="researchDesignLessons"></div>
+            </div>
+        </section>
+
+        <!-- PRACTICE SECTION -->
+        <section id="practice" class="content-section">
+            <h2>Practice Exercises</h2>
+            <p class="section-intro">Apply what you've learned with interactive exercises</p>
+            <div id="practiceContainer"></div>
+        </section>
+
+        <!-- CHALLENGES SECTION -->
+        <section id="challenges" class="content-section">
+            <h2>Challenges & Games</h2>
+            <p class="section-intro">Test your skills and have fun learning</p>
+            <div id="challengesContainer"></div>
+        </section>
+
+        <!-- LESSON VIEWER MODAL -->
+        <div id="lessonModal" class="modal">
+            <div class="modal-content">
+                <button class="close-btn" id="closeModal">&times;</button>
+                <div id="lessonContent"></div>
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" id="prevLesson">Previous</button>
+                    <button class="btn btn-primary" id="completeLesson">Mark Complete</button>
+                    <button class="btn btn-secondary" id="nextLesson">Next</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Built to help you become an expert quantitative UX researcher</p>
+            <p class="small">Your progress is saved locally in your browser</p>
+        </div>
+    </footer>
+
+    <script src="curriculum.js"></script>
+    <script src="challenges.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

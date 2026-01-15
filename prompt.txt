@@ -1,0 +1,318 @@
+GOAL:
+Help the user of this site become an EXPERT quantitative user research and data scientist.
+
+TASK:
+Build an interactive website that the user can engage with to develop deep expertise in statistical reasoning, survey analysis, and data science. Prioritize helping the user develop a strong understanding of the fundamental statistical concepts used by these disciplines. Help the user develop a strong intuition for which analytical approaches to use.
+
+- For survey analysis: Cover survey design and question writing, sampling and weighting, and analysis (cross-tabs, margins of error, statistical significance, effect sizes, regressions)
+- For data science: Focus on data retrieval (SQL), analysis and visualizations (Python and R)
+- For both: Teach about ETL and data transformation, cleaning, pipelines etc.
+
+CONSTRAINTS:
+- The website should live hosted online so that the user can visit in from any device
+- Let the user save their progress so that they can pick up where they left off
+- Assume the user is using the site on their phone. Make it easy to use and responsive on a mobile device.
+- Make learning fun. Incorporate games and challenges.
+- Always include references to articles or resources where the user can go deeper on a particular concept.
+- When feasible, make the learning interactive. Let the user try things as they're learning.
+
+CONTEXT:
+
+Below are some job descriptions and blog posts that further details the qualifications the user is looking to develop. Use these as inspiration and guidance for the site.
+
+Airbnb Staff UXR
+Research has been part of Airbnb from the beginning, ever since Paul Graham told the Airbnb founders, "go to your users." As designers, the founders embraced this advice and got on a plane to meet with Airbnb hosts that very weekend. Since those early days, the value of research has been baked into Airbnb’s product culture. 
+
+The Difference You Will Make:
+
+We are looking for a mixed methods researcher with a strong foundation in, and passion for quantitative research in addition to an ability and comfort to flex into qualitative projects as needed. 
+
+In this role, you will use your knowledge of research design and quantitative analytical skills to plan and execute large-scale data collection, uncover insights from qualitative and quantitative data, and translate those insights into strategic and actionable recommendations.
+
+Your research will focus across methods and Airbnb’s online and offline experience—after all, most experiences with Airbnb happen when travelers are not using our digital products. And you are at the front lines of delivering insights from around the world, making Airbnb a truly global/local product. 
+
+A Typical Day: 
+
+Conduct practical and impactful quantitative research on our community of hosts and guests.
+Uncover insights about users by using sophisticated and innovative methodologies, measurement strategies, experiments, and mixed-methods research.
+Partner and share insights with product teams, other insights teams,  data scientists, marketers, policy managers, and executives.
+Your Expertise:
+
+Masters or PhD in Psychology, Survey Science/Methods, Human-Computer Interaction, Economics, Political Science, or a related field
+10+ years of industry experience
+Strong storytelling skills, ability to bring data and insights to life in compelling ways for varied audiences
+Experience with statistical analysis, modeling, experimental design, and survey design
+Experience with statistical analysis packages and (R, Stata, SPSS, etc.)
+Experience with survey programming platforms (Confirmit, Qualtrics, etc.)
+Experience conducting in-depth interviews and foundational qualitative methods
+Comfort using usability testing tools (UserTesting, dscout, outset.ai, etc.)
+Experience managing projects involving cross-functional teams
+Familiarity with SQL
+Bonus Experience:
+6+ years in-house experience working in tech, hospitality, or a dual-sided marketplace
+Experience with ETL and Python 
+Coding/scripting skills 
+Experience with cross-cultural products or international surveys
+
+Google Quant UXR, Search
+Minimum qualifications:
+Bachelor’s degree or equivalent practical experience.
+4 years of experience in an applied research setting or similar.
+Experience in programming languages used for data manipulation and computational statistics (e.g., Python, R, MATLAB, C++, Java, or Go).
+Experience in survey design and statistics.
+
+Preferred qualifications:
+Master's or PhD degree in Human-Computer Interaction, Cognitive Science, Statistics, Psychology, Anthropology, or related field.
+3 years of experience working with executive leadership (e.g., director-level and above).
+2 years of experience conducting UX research on products, managing projects, and working in a large, matrixed organization.
+Experience in programming computational and statistical algorithms for large data sets.
+Knowledge of research questions within a given domain and technical tools for the analysis of data within that field.
+Knowledge of descriptive, inferential, and multivariate statistics, including t-test and ANOVA, and experimental design.
+About the job
+At Google, we follow a simple but vital premise: "Focus on the user and all else will follow." Quantitative User Experience Researchers make this possible.
+
+Google User Experience (UX) is made up of multi-disciplinary teams of UX Designers, Researchers, Writers, Content Strategists, Program Managers, and Engineers who care deeply about the people who use our products. The UX team plays an integral part in gathering insights about the attitudes, emotions, needs, and behaviors of people who use our products to inspire and inform design. We collaborate closely with each other and with engineering and product management to create industry-leading products that deliver value for the people who use them, and for Google’s businesses.
+
+As a Quantitative User Experience Researcher (Quant UXR), you’ll help inform your team of UXers, product managers, and engineers about user needs. You’ll play a critical role in creating useful, usable, and delightful products. You’ll work with stakeholders across functions and levels and have impact at all stages of product development.
+
+You will investigate user behavior and user needs using empirical research methods such as logs analysis, survey research, path modeling, and regression analysis. Quant UXRs vary in background using skills from computer science, quantitative social science, econometrics, data science, survey research, psychology, human-computer interaction, and other fields. You’ll combine skills in behavioral research design, statistical methods, and general programming to improve user experience.
+
+The Quant UXR community at Google will help you do your best work. You’ll have the opportunity to work with and learn from UXRs across Google through regular meetups, mentor programs, and access to internal research tools.
+
+In Google Search, we're reimagining what it means to search for information – any way and anywhere. To do that, we need to solve complex engineering challenges and expand our infrastructure, while maintaining a universally accessible and useful experience that people around the world rely on. In joining the Search team, you'll have an opportunity to make an impact on billions of people globally.
+
+Senior Quant UXR, Google Cloud
+Minimum qualifications:
+Bachelor's degree or equivalent practical experience.
+6 years of experience in product research in an applied research setting, or similar.
+Experience in programming languages used for data manipulation and computational statistics (e.g., Python, R, MATLAB, C++, Java, or Go).
+
+Preferred qualifications:
+Master's degree or PhD in Human-Computer Interaction, Cognitive Science, Statistics, Psychology, Anthropology, or related field.
+5 years of experience conducting UX research on products and working with executive leadership (e.g., Director level and above).
+3 years of experience managing projects, and working in a large, matrixed organization.
+About the job
+At Google, we follow a simple but vital premise: "Focus on the user and all else will follow." Quantitative User Experience Researchers make this possible.
+
+Google User Experience (UX) is made up of multi-disciplinary teams of UX Designers, Researchers, Writers, Content Strategists, Program Managers, and Engineers: we care deeply about the people who use our products. The UX team plays an integral part in gathering insights about the attitudes, emotions, needs, and behaviors of people who use our products to inspire and inform design. We collaborate closely with each other and with engineering and product management to create industry-leading products that deliver value for the people who use them, and for Google’s businesses.
+
+As a Quantitative User Experience Researcher (Quant UXR), you’ll help inform your team of UXers, product managers, and engineers about user needs. You’ll play a critical role in creating useful, usable, and delightful products. You’ll work with stakeholders across functions and levels and have impact at all stages of product development.
+
+You will investigate user behavior and user needs using empirical research methods such as logs analysis, survey research, path modeling, and regression analysis. Quant UXRs vary in background and use skills from computer science, quantitative social science, econometrics, data science, survey research, psychology, human-computer interaction, and other fields. You’ll combine skills in behavioral research design, statistical methods, and general programming to improve user experience.
+
+The Quantitative UXR community at Google will help you do your best work. You’ll have the opportunity to work with and learn from UXRs across Google through regular meetups, mentor programs, and access to internal research tools.
+
+Google Cloud accelerates every organization’s ability to digitally transform its business and industry. We deliver enterprise-grade solutions that leverage Google’s cutting-edge technology, and tools that help developers build more sustainably. Customers in more than 200 countries and territories turn to Google Cloud as their trusted partner to enable growth and solve their most critical business problems.
+
+The US base salary range for this full-time position is $151,000-$222,000 + bonus + equity + benefits. Our salary ranges are determined by role, level, and location. Within the range, individual pay is determined by work location and additional factors, including job-related skills, experience, and relevant education or training. Your recruiter can share more about the specific salary range for your preferred location during the hiring process.
+
+Please note that the compensation details listed in US role postings reflect the base salary only, and do not include bonus, equity, or benefits. Learn more about benefits at Google.
+
+Responsibilities
+Define and measure quantitative UX goals and metrics in collaboration with Designers, Qualitative Researchers, Data Scientists, Engineers and Program Managers.
+Develop code and statistical models to understand User Experience.
+Conduct empirical research using methods from computer science, quantitative social science, statistics, econometrics, and other fields to understand user behavior and extract meaningful patterns from large data sets.
+Examine existing data and product designs to generate hypotheses and plans for high-impact research.
+Prioritize and drive research to improve user experience. Communicate findings to stakeholders in the company. Make research findings convincing and actionable for both research experts and non-experts.
+
+
+What does a quantitative UX researcher do?
+April 13, 2023
+https://carljpearson.com/what-does-a-quantitative-ux-researcher-do/
+
+I often get asked the question, what does a quantitative UX researcher actually do? There’s no single, correct answer. Rather than discussing educational backgrounds, tools, or methods as others have done before (1, 2, 3), this post outlines the thinking behind the types of projects I’ve typically done as a quantitative UX researcher (UXR).
+
+A note on defining the role of quantitative UXR:
+
+I’ve noticed some archetypes emerge as I took on the title myself. At Meta, where I first got the job title of quantitative UXR, the role typically has a strong ownership over survey methodologies. At Google, the role typically has ownership over behavioral log data that is closer to what a data scientist may deal with, albeit with a focus on precise user actions and not on high-level business metrics. This post focuses on my work as a quantitative UXR with a heavier survey focus.
+
+Of the work I’ve done as a quantitative UXR to help product teams or organizations, I’ve noticed four main project types:
+
+Generalizing findings from qualitative research
+Uncovering user motivations and attitudes behind data science metrics
+Creating tracking surveys for business-critical user attitudes
+Measuring usability at a high level of confidence
+Let’s take a look at what each of these mean, in depth, and consider some hypothetical examples.
+
+
+Qualitative UXRs generate a huge amount of insights at rapid speed. UXR teams normally have far more qualitative UXRs compared to quantitative UXRs. For many product decisions, a team can confidently keep experimenting, designing, and moving ahead with just the qualitative data. However, when a business decision is extremely high risk or needs to compare across segments, a quantitative UXR can help validate qualitative findings at a bigger scale. 
+
+Examples
+A qualitative UXR may find 20 customer needs through deep-dive interviews. Using a MaxDiff survey, a quantitative UXR could effectively prioritize all 20 needs in order of importance. The product team could then take this information to choose what features to develop first.
+
+A qualitative UXR may find that some users in segment A have a certain need, but this wasn’t found as prominently in segment B through 6 total interviews. While qualitative research is invaluable to discovering those user needs, its strength is not sizing how those user needs differ across groups more broadly. Using a general attitudinal survey, a quantitative UXR could find out if users in segment B also have this user need and if it’s more or less prominent than those users in segment A.
+
+Finding the why behind data science
+A shovel digging up a scoop of sand
+Photo by Andrey Metelev on Unsplash
+Data science (DS) is often at the forefront of information-gathering roles in an organization. A DS can effectively see the entire landscape of behavioral usage in a product. However, sometimes knowing what every user did isn’t enough, and a team needs to know why users did it. A quantitative UXR could run an intercept survey across segments to map user motivations to behavioral groups.
+
+Example
+A DS may find that users are not engaging with a new feature. A quant UXR could uncover why the new feature is going unused through a precise survey. This survey might appear right as a user discovers the features or navigates to it and contain one multiple-choice question. Is the feature not useful? Is it too hard to use? Are users unaware it exists? This survey could explain what the most common reason is. Then, the product team could take the right action to improve upon the lack of engagement.
+
+Tracking user attitudes
+Pens, a ruler, and a drawn graph of a value increasing over time
+Photo by Isaac Smith on Unsplash
+An organization often wants to know user attitudes at a high level. Do users like the product? Does the product meet the mission an organization has set to accomplish for their users? Is the product easy to use over time? This is where a quantitative UXR is firmly in the center of their skill set. They can use advanced survey methods to accurately capture users’ attitudes over time, such as survey response weighting or nested statistical models.
+
+Example
+A social media organization may have a mission to let users have fun and connect with their friends/family. Top executives could want to know how successful the company is with that mission. A quantitative UXR could set up tracking surveys to measure if the users of this product feel like they have fun in the product and if it creates a sense of connection with friends and family. The organization could then understand how they’re meeting their mission. They could also dig deeper across certain geographic segments, new/tenured users, or how external events affect users’ perceptions of the organization’s products. Some organizations set up a simple CSAT or NPS, but a quantitative UXR can make something even more tailored and relevant to the goals of the organization.
+
+Measuring usability
+Bikers racing
+Photo by paolo candelo on Unsplash
+This may be my bias from my human factors background showing, but usability is something that UX research has a unique ability to uncover and influence improvements from. Most organizations deploy usability research in a qualitative setting (n=5, right?). However, with specialized tools (UserZoom, MUIQ, etc), a quantitative UXR can easily scale up usability investigations to a large sample when the situation calls for it. These situations may be strategic usability tracking/improvements or tactical tie-breakers.
+
+Examples
+A team may want to understand how their product’s usability compares to key competitors. A quantitative UXR could develop a competitive usability benchmarking study. This would show strategically where their product falls short of a competitor and what tasks need to be fixed most urgently. Qualitative testing alone could not measure the difference in usability across competitors or rank tasks by urgency.
+
+A team may want to launch a new navigation menu, but needs to settle on a design variant before building the final product with valuable engineering time. A qualitative study can’t confidently declare a winner based on behavioral metrics. A quantitative UXR could set up a usability test in a clickable prototype and measure completion rates across versions to declare a winner. With even less time, they could set up a tree test just using the names of each menu navigation item and declare a design variant as the winner from the information architecture.
+
+Wrapping up
+The four previous themes showcased types of work I’ve personally done across organizations. There are numerous other areas a quantitative UXR can show their expertise, to name a few:
+
+Develop a survey scale for repeated use (think classic psychometric processes)
+Use log data alone in a natural experiment (think delivery app metrics across neighboring cities with different food delivery laws)
+Use machine learning to classify user-generated content
+Run a sentiment analysis to discover what your app store reviews are saying about users’ experiences with your product
+It’s hard to put quantitative UX research in a box. Take all of these key areas as a jumping off point, rather than an attempt to exhaustively define quantitative UX researchers’ job role.
+
+It’s an exciting time to get into quantitative UX research. Showcasing the new interest and maturity, the first annual Quant UX Con started last year and is planned again for this year. My anecdotal experience is that I’ve seen the number of organizations looking for quantitative UXRs grow rapidly since I was first looking for this role in 2019. Quantitative UXRs come from many backgrounds (human factors, sociology, political polling, statistics, etc), so I recommend attending Quant UX Con to learn more.
+
+Learn Quantitative UX Research: Self-study resources
+February 17, 2025
+https://carljpearson.com/learn-quantitative-ux-research-self-study-resources/
+
+Quantitative UX research is a growing sub-field of UX research. Whether you’re a qualitative UX researcher looking to broaden your skills or someone from a related field looking to pivot, it can be hard to know how to build  your quantitative UX research skills. This shares four pillars to learn quantitative UX research and some resources you can use to dive into any of those pillars.
+
+The four pillars of quantitative research
+What are the pieces that make up the discipline of quantitative UX research? The most comprehensive book on the discipline right now is Quantitative User Experience Research (2024) by Chris Chapman and Kerry Rodden. The introduction section lays out three core skills for a quant UXR: UX research, statistics, and programming. I agree with these, but I prefer to focus on four pillars (rather than three) that provide tangible learning paths for people interested in quantitative UX research.
+
+While the same book will show that the definition of a quant UXR role is nebulous, we do see some norms emerging. Maria Cipollone analyzed job postings in 2022 for the quant UXR title: she found strong consistency for the required skill of survey methodologies in quant UX research roles. While the survey domain of quant UXRs is not absolute, it’s widely applicable in a descriptive way. 
+
+This leads me to breaking the UX research skill in two pillars1. UX research is a broad area on its own, and to focus on that as a skill without some narrowing might leave newcomers lost. We already know surveys are important, so that is the first pillar. The second pillar to come out of UX research is research design, or how we build studies to reduce bias and increase validity of our claims2.
+
+That gives us the four pillars for learning quantitative UX research skills: statistics, surveys, programming, and research design. This serves as a strong base for learning quant UX research, but it’s certainly not impeachable. Some quant UXRs will lean heavily into just one pillar. Other skills are also important, though I consider them more peripheral or ill-defined (stakeholder management, product thinking, etc.). That said, if you just want to dive into quant UX research, these pillars will not serve you wrong.
+
+How to learn the pillars
+There is no right or wrong way to learn to be a quantitative UX researcher. There is no degree that will singularly prepare you for this field. The tactics can vary but most quant UXRs have a blend of formal education, self-study, and on-the-job practice. 
+
+My path began formally. I completed a PhD in human factors psychology. Even at that point, I questioned if I could hold the title of quantitative UX researcher. I continued to self-study specific methods I didn’t know as well like survey weighting and MaxDiff, and on-the-job training was crucial for things like quant research operations and product impact.
+
+I have a lot of thoughts about whether or not grad school is helpful for quant UX research, but that will need to wait for an upcoming post in my blog. 
+
+For this post, I’ll share some self-study resources for people that want to up-skill their UX research skills on the quant side, or fill in some gaps pivoting in from another field. 
+
+Why are you here?
+If you find your reason in this list, I can provide some basic tips for quant UX research self-learning. If you can’t find yourself on the list, feel free to ask a question in a comment on the related LinkedIn post or contact me directly. 
+
+I need to run a survey and I only have a day to figure out how to do it in a quantitative way.
+I am a qualitative researcher already and I want to learn more about surveys.
+I am a student who wants to up-skill for the path of quantitative UX research.
+I am a mixed-methods UX researcher who wants to become a quantitative UX researcher or build that skillset to be more robust.
+Self-study resources list
+A person finding a book on a library shelft
+Many people find online courses helpful – I will not share them here because I took most of my courses during grad school, so I don’t have experience with online courses. Most of what I share here are books, but also a few blogs, websites, and papers that are especially useful. I’ll break it down by types of media and what pillars each book covers (they often touch more than one).
+
+Notes about programming: R vs. Python
+Books
+Quantitative User Experience Research: Informing Product Decisions by Understanding Users at Scale
+Chris Chapman and Kerry Rodden, 2024
+Pillars: surveys 🔴, statistics 🟡, programming 🔵, research design 🟣
+This book won’t dive as deep into any pillar, but it pulls all of the core concepts together and talks in detail about the tendrils that connect them. There are tons of concrete, tactical examples (like the MaxDiff section), but it is primarily a view of the whole domain of quant UX research. If you don’t know how to calculate a confidence interval, I wouldn’t start with this book (though the first few chapters may be useful for general orientation to the field).
+Quantifying The User Experience: Practical Statistics For User Research
+Jeff Sauro and Jim Lewis, 2016
+Pillars: statistics 🟡, programming 🔵 (if you get the companion)
+If you aren’t sure what a confidence interval is or how to calculate it, start here. This is often my go-to recommendation for statistics. It’s the strongest blend of application with UX research and fundamental statistics theory. You can get R or Excel companions as well which make it easier to fold into your workflow. It has a bit of a human factors lens, compared to a market research lens, so that is probably my bias showing through.
+Surveys That Work: A Practical Guide for Designing and Running Better Surveys
+Caroline Jarrett, 2021
+Pillar: surveys 🔴
+This book is ideal for newcomers to surveys. It blends a bit of theory with lots of pragmatic instruction, cut with a few real anecdotes from industry. By the end you’ll know how to write effective survey questions, figure out the logistics (we call it research operations in industry terms) and analysis/presentation. There is also a bonus chapter to give you the basics in 5-10 minutes.
+Surveying the User Experience: Design and Analysis of Surveys for UX and Customer Research
+Jeff Sauro and Jim Lewis, 2024
+Pillars: surveys 🔴, statistics 🟡 
+This book is much more academic than Surveys That Work. It will cover in detail things like sampling strategies, measurement error, and formal biases. It still covers the nuts and bolts of real survey work,  like where to find participants and how much to pay them. A big strength of this book is the primary research the authors did to understand things like how many scale points to use or how top 2 box scores affect results. They also go to a moderate level of depth on statistical analysis methods for survey questions.
+Learning statistics with R: A tutorial for psychology students and other beginners
+Danielle Navarro, 2019 (not fully published)
+Pillars: research design 🟣, statistics 🟡, programming 🔵
+This book is nearly the full package: research design, R, and statistics. I found it for its research design chapter (which is an excellent primer), but it can be a great resource if you want a consistent set of materials to cover the most ground out of the quant UX learning pillars. It does not apply these concepts to UX research directly.
+Measuring the User Experience: Collecting, Analyzing, and Presenting Usability Metrics
+Tom Tullis and Bill Albert, 2013
+Pillars: surveys 🔴, statistics 🟡, research design 🟣
+ This was one of the first quantitatively-focused UX research resources. Much of it is descriptive of certain UX research metrics, rather than going deep into statistics. For that reason, it’s a better resource if you want something lightweight. Perhaps due to the era of UX research when it was originally published, it does focus quite a bit on evaluations of usability. 
+Discovering Statistics Using R and RStudio
+Andy Fields, 2012 (2025 edition available for pre-order)
+Pillars: statistics🟡, programming 🔵
+This book comes in versions for R, SPSS, SAS, and other statistical packages. It’s a common resource for psychology graduate students. It gets well into the theory and approaches it from a psychological experimental design lens – I find this lens quite valuable for UX research. It is less applied and is certainly a longer read than the ones above if you do all of the homework.
+Statistical Rethinking
+Richard McElreath, 2015
+Pillars: statistics🟡, programming 🔵
+Frequentist statistics dominate quant UX research, but that may not always be the case. I am on my journey to learn Bayesian statistics, and this book is where I’ve started. Candidly, I am not done reading it yet, but what I have read so far shows it to be an intuitive telling of a complicated subject. By chapter 4-5 ,you’ll have the basic tools to start running some bayesian models in R.
+R for Marketing Research and Analytics
+Chris Chapman and Elea McDonnel, 2015
+Pillars: surveys 🔴, statistics 🟡, programming 🔵, research design 🟣
+I consider quantitative UX research a blend of marketing research and human factors traditions. This book is a great way to learn more about the marketing research approaches for things like key driver analysis. The R sections are substantial enough to start from nothing and get to running analyses.
+Research Design: Qualitative, Quantitative and Mixed Methods Approaches
+John Creswell, 2023
+Pillar: research design 🟣 
+This is an academic text, and covers qual and quant, but its section on quantitative design is really useful. It goes beyond surveys so you can start thinking about experimental and quasi-experimental designs which are useful for behavioral measures or assessing the quality of a/b experimentation. On top of that, it has a section on threats to validity – this is something I think all researchers should understand strongly. This material might be hard to see immediate impact on your UX research work, but is likely to make your findings closer to the “truth” that you’re seeking. I’d recommend this one if you want a deep dive on research design.
+The Visual Display of Quantitative Information
+Edward Tufte, 2001
+Pillars: statistics 🟡 (data visualization) 
+While not strictly statistics, it’s such an essential tool in analysis I would be remiss to not mention a few data visualization resources. The book’s original version was published in 1983, but it’s still a good one. It won’t tell you how to plot a linear regression but it will give you the philosophical tools to make the right choices yourself.
+Good Charts: The HBR Guide to Making Smarter, More Persuasive Data Visualizations
+Scott Berinato, 2023
+Pillars: statistics 🟡 (data visualization) 
+Newer than Tufte, this pulls in some more modern citations motivating the recommendations and is more applied for the business world.
+Blogs, blog posts, and papers
+Quant UX Blog
+Chris Chapman (and guests)
+Pillars: surveys 🔴, statistics 🟡, programming 🔵, research design 🟣
+Chris has some great personal blog posts, but other pieces feel like a natural extension of his book that focus on the details of specific methods and how to execute great quant UX research in general. Chris has a marketing research focus in most content. 
+MeasuringU
+ Jeff Sauro, Jim Lewis (and guests)
+Pillars: surveys 🔴, statistics 🟡, research design 🟣
+The content is qual and quant, but it has a quant-leaning focus. It also is characterized by getting into the weeds with the exact calculations you need to do what the post is talking about. The authors have a usability and summative evaluation focus in most of the content.
+Counting Stuff
+Randy Au
+Pillars: statistics 🟡, programming 🔵, research design 🟣
+Randy’s work focuses more on the analytics/log side than surveys – this is a nice resource because that info is harder to find outside of a data science lens. 
+Research Methods Knowledge base (or PDF form)
+Willam Trochim
+Pillar: research design 🟣
+This is a great primer on research design and how it is practiced. While academic, it’s condensed enough that I recommend it as the one resource to read if you don’t know anything about research design.
+Meta Research Medium Blog
+Various authors
+Pillars: surveys 🔴, research design 🟣
+Meta researchers share their best practices here. It’s qual and quant, but there are some extremely useful blog posts for survey best practices built from industry trials. It appears that the publication is no longer active, but lots of useful stuff remains. 
+Figures and Frameworks
+Carl J. Pearson
+Pillars: surveys 🔴, statistics 🟡, programming 🔵, research design 🟣
+Hey, you’re already here! Did you know my blog has a title now? If you click the link, you’ll find all of my posts and a handy way to sign up to get it right in your inbox.
+Websites and other resources
+Quant UX Conference
+Pillars: surveys 🔴, statistics 🟡, programming 🔵, research design 🟣
+The free conference proceedings available here are highly applied and valuable. It’s also a well-priced and friendly remote conference, so I’d suggest attending if you want to learn more about quant UX research.
+Swirl
+Pillar: programming 🔵
+This isn’t really a website, it’s a package for R where you can learn R in the R environment. A great way to get your hands dirty with basic syntax. 
+Khan Academy: Statistics and probability
+Pillar: statistics 🟡
+I haven’t used this, but I know of people that have found it helpful to learn the basics of stats in a more interactive way.
+SQLBolt
+Pillar: programming 🔵
+Like other coding, SQL is best learned by doing right from the start. You can run test queries right in your browser.
+W3Schools
+Pillar: programming 🔵
+Similar to SQLBolt but it is more of a dictionary-style reference. It’s a handy reference for understanding basic syntax.
+Wrapping up
+Quant UX research is a growing discipline in UX research and a useful skill set for any UX researcher. At the beginning, I laid out four pillars for learning quant UX research, so you can focus on the area that needs the most attention: surveys, statistics, programming, and research design. The list of resources I shared is not exhaustive but highlights some tremendous books, websites, and other materials that will help you take your quantitative UX research skills to the next level. I may also continue to add resources I find most helpful, so watch for updates.
+
+Skip the algorithm, get my new posts right to your inbox.
+
+Email:
+your@email.com
+Subscribe
+Appendix
+Chris Chapman also uses a similar breakdown in his article Notes on Quantitative UX Research at Google, including statistics, programming, UX research, and research design. UX research becomes a bit self-referential here, though I see the value of it. For example, I do a lot of usability benchmarking which better fits into the label of UX research than any of my proposed pillars. However, this is more of an edge-case method (like eye-tracking, for example). For someone looking for the most prototypical description of quant UX research to aid in their initial learning, Surveys seems to most concisely fit as its own pillar. All this to say, Chris Chapman is most accurate, but my version may be more pragmatically useful in directing a learner’s limited attention.   ↩︎
+Longer definition: Research design is the overall strategy for answering a research question. Surveys and statistics are elements employed in research design. Research design covers both qualitative and quantitative methods. Obviously the focus here for a quantitative UX researcher should be on the latter, but it’s healthy to know the other side of the coin to avoid the problem of holding a hammer and only seeing nails. In other words, you need to know when surveys don’t apply so you don’t waste time or get invalid conclusions from your work. ↩︎
