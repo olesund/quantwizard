@@ -881,6 +881,522 @@ const curriculum = {
                     <a href="https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data" target="_blank">Regression - Khan Academy</a>
                 </div>
             `
+        },
+        {
+            id: 'stats-6',
+            title: 'Multiple Regression Deep Dive',
+            duration: '30 min',
+            description: 'Master regression coefficients, model fit, assumptions, and diagnostics',
+            content: `
+                <h2>Multiple Regression Deep Dive</h2>
+
+                <h3>The Regression Equation</h3>
+                <p>Multiple regression predicts an outcome Y from several predictors at once:</p>
+                <div class="key-point">
+                    <strong>Y' = b₀ + b₁X₁ + b₂X₂ + b₃X₃ + ε</strong><br>
+                    b₀ = intercept (predicted Y when all Xs = 0)<br>
+                    b₁...bₖ = regression coefficients (slopes)<br>
+                    ε = residual (Y observed − Y predicted)
+                </div>
+
+                <div class="example">
+                    <strong>Real example (NELS data):</strong><br>
+                    Math₁₂ = 39.7 + 0.28(SES) + 0.15(FamilySize) − 0.45(EnglishUnits) + 3.64(MathUnits)<br><br>
+                    Interpretation: Each additional math class taken predicts a 3.64-point increase in 12th grade math achievement, controlling for the other variables.
+                </div>
+
+                <h3>b vs β (Unstandardized vs Standardized)</h3>
+                <p><strong>b (unstandardized):</strong> Slope in the original units. "A 1-unit increase in X predicts a b-unit change in Y."</p>
+                <p><strong>β (standardized Beta):</strong> What b would be if all variables were converted to z-scores first. Lets you compare the relative importance of predictors with different scales.</p>
+
+                <div class="key-point">
+                    <strong>Rule of thumb:</strong> Report b in applied research (concrete interpretation). Report β when comparing relative predictor importance in theoretical research.
+                </div>
+
+                <h3>R² and Adjusted R²</h3>
+                <p><strong>R²</strong> is the proportion of variance in Y explained by the model (0 to 1). R² = 0.30 means your predictors explain 30% of variance in the outcome.</p>
+                <p><strong>Adjusted R²</strong> corrects for the number of predictors and sample size. R² is biased upward; adjusted R² is the better statistic to report. The two converge when N is large relative to the number of predictors.</p>
+
+                <h3>Three Types of Multiple Regression</h3>
+
+                <p><strong>Standard (Forced):</strong> All predictors entered simultaneously. Default and most common. Interpret both R² and individual coefficients.</p>
+
+                <p><strong>Sequential (Hierarchical):</strong> Predictors entered in theoretically-motivated blocks. You explicitly test whether each block improves model fit via ΔR² and its significance. Use when you want to test incremental contributions.</p>
+
+                <div class="example">
+                    <strong>Sequential example:</strong> Predicting 12th grade science achievement<br>
+                    Block 1: Academic variables (English units, Math units, etc.) → R² = 0.18<br>
+                    Block 2: Add non-academic variables (SES, family size, etc.) → R²change = 0.021, F(7, 401) = 2.66, p = .011<br><br>
+                    Conclusion: Non-academic factors add a small but significant 2.1% of explained variance beyond academic factors.
+                </div>
+
+                <p><strong>Stepwise (Statistical):</strong> Computer decides which variables to include based on statistical criteria. Use only for exploratory work — it's sample-dependent and can produce ungeneralizable results. Avoid when you have theory.</p>
+
+                <h3>Regression Assumptions</h3>
+                <p>Check these by inspecting a scatterplot of predicted scores (Y') against residuals (Y − Y'):</p>
+                <ul>
+                    <li><strong>Normality:</strong> Residuals should be normally distributed. If not, predictions are biased in one direction.</li>
+                    <li><strong>Linearity:</strong> Residuals should show no pattern (shapeless blob). A curved pattern suggests you need a non-linear term.</li>
+                    <li><strong>Homoscedasticity:</strong> Residuals should have equal spread at all predicted values. A funnel shape indicates heteroscedasticity, which weakens (but doesn't invalidate) results.</li>
+                </ul>
+
+                <h3>Multicollinearity</h3>
+                <p>Occurs when predictors are highly correlated with each other. This destabilizes individual regression coefficients (huge standard errors, wide CIs) — but doesn't sabotage the overall R².</p>
+                <p>Diagnose with <strong>Tolerance</strong> (how much of a predictor's variance is NOT shared with others). Tolerance &lt; .20 is a red flag. VIF = 1/Tolerance; high VIF = collinearity problem.</p>
+                <p>Fix by: removing redundant variables, creating composite scores, or using Factor Analysis first.</p>
+
+                <h3>Outliers</h3>
+                <p><strong>Cook's Distance</strong> measures how influential each case is on the regression model. Cook's D > 1 flags a problematic outlier. Investigate: run the analysis with and without that case to see how much the results change.</p>
+
+                <div class="key-point">
+                    <strong>Best practice:</strong> Always inspect the predicted vs. residual plot, check Cook's distances, and report adjusted R² with its significance test from the ANOVA table.
+                </div>
+
+                <div class="resources">
+                    <h4>Learn More:</h4>
+                    <a href="https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data" target="_blank">Regression - Khan Academy</a>
+                    <a href="https://measuringu.com/regression-basics/" target="_blank">Regression Basics for UX - MeasuringU</a>
+                </div>
+            `,
+            exercises: [
+                {
+                    question: 'You run a regression with R² = 0.28. Then you add 10 more noise predictors (all uncorrelated with the outcome) and R² rises to 0.31. What should you report and why?',
+                    options: [
+                        'R² = 0.31, because more explained variance is always better',
+                        'Adjusted R², because it penalizes for adding predictors that don\'t genuinely improve the model',
+                        'R² = 0.28, because you should use the simpler model',
+                        'Neither — both R² values are invalid'
+                    ],
+                    correct: 1,
+                    feedback: {
+                        correct: 'Correct! Adjusted R² corrects for the number of predictors. Adding meaningless variables will always inflate raw R², but adjusted R² will drop if the new variables don\'t help.',
+                        incorrect: 'Raw R² is biased upward when you add predictors. Adjusted R² penalizes for model complexity, making it the better statistic to report.'
+                    }
+                },
+                {
+                    question: 'Two predictors have standardized Betas of β = 0.45 (ease of use) and β = 0.12 (color scheme). What does this tell you?',
+                    options: [
+                        'Ease of use increases satisfaction by 0.45 points per unit',
+                        'Ease of use is a stronger predictor of satisfaction than color scheme, controlling for other variables',
+                        'Color scheme has no effect on satisfaction',
+                        'The two predictors explain 57% of variance combined'
+                    ],
+                    correct: 1,
+                    feedback: {
+                        correct: 'Correct! Standardized Betas put all predictors on a common scale (standard deviations), so you can compare their relative importance. Ease of use has about 3.75× the predictive importance of color scheme.',
+                        incorrect: 'Standardized Betas allow you to compare relative predictor importance across variables measured on different scales.'
+                    }
+                }
+            ]
+        },
+        {
+            id: 'stats-7',
+            title: 'Categorical Predictors & Moderation',
+            duration: '30 min',
+            description: 'Use dummy coding for categorical variables and test interaction effects',
+            content: `
+                <h2>Categorical Predictors & Moderation</h2>
+
+                <h3>Dichotomous Predictors</h3>
+                <p>Regression can handle categorical predictors. For a <strong>two-level</strong> (dichotomous) variable, just code the groups as 0 and 1.</p>
+
+                <div class="example">
+                    <strong>Example:</strong> Gender coded as M = 1, F = 0<br>
+                    Y' = 2 + 5(Gender)<br>
+                    Predicted score for males: 2 + 5(1) = 7<br>
+                    Predicted score for females: 2 + 5(0) = 2<br><br>
+                    The coefficient (5) is the difference between groups. Coding 0/1 (not 1/2) makes the intercept meaningful — it's the predicted value for the reference group (0).
+                </div>
+
+                <h3>Dummy Coding (3+ Categories)</h3>
+                <p>For a categorical variable with <strong>j levels</strong>, create <strong>j − 1 dummy variables</strong>. Each dummy codes membership in one group vs. a reference group (always coded 0).</p>
+
+                <div class="example">
+                    <strong>Example:</strong> Favorite NBC comedy (4 shows = 3 dummies):<br>
+                    D1 = 1 if The Office, 0 otherwise<br>
+                    D2 = 1 if Parks &amp; Rec, 0 otherwise<br>
+                    D3 = 1 if 30 Rock, 0 otherwise<br>
+                    Reference group: Community (all dummies = 0)<br><br>
+                    Each coefficient is the predicted difference between that show's fans and Community fans.
+                </div>
+
+                <div class="key-point">
+                    <strong>Key rule:</strong> One level is always the reference group. Coefficients for dummy variables represent that group's predicted difference from the reference. Never omit the reference group — that would create perfect multicollinearity.
+                </div>
+
+                <h3>Moderation (Interaction Effects)</h3>
+                <p>Moderation tests whether the effect of X on Y <em>depends on</em> another variable M. This is an interaction — the regression coefficient for X changes at different values of M.</p>
+
+                <div class="example">
+                    <strong>Concept:</strong> Does water consumption predict urgency to use the restroom differently for people who have recently evacuated vs. not?<br><br>
+                    Model without moderation: Y' = b₀ + b₁(water) + b₂(evacuated)<br>
+                    Model with moderation: Y' = b₀ + b₁(water) + b₂(evacuated) + b₃(water × evacuated)<br><br>
+                    b₃ tests whether the water → urgency relationship is different across the two groups. If b₃ is significant, moderation is present.
+                </div>
+
+                <h3>Creating the Interaction Term</h3>
+                <p>Multiply the two variables together to create the interaction term. For a continuous × dichotomous interaction this is straightforward: when the dichotomous variable = 0, the interaction term = 0; when it = 1, the interaction term equals the continuous variable.</p>
+
+                <h3>Interpreting Moderation</h3>
+                <p>When moderation is present, the coefficient for the focal predictor (b₁) becomes its <strong>simple effect</strong> — the effect of X when the moderator M = 0.</p>
+
+                <div class="example">
+                    <strong>Example:</strong><br>
+                    Y' = 2.19 + 0.007(water) + 1.96(evacuated) − 0.005(water × evacuated)<br><br>
+                    When evacuated = 0: Y' = 2.19 + 0.007(water) → each mL of water increases urgency by 0.007<br>
+                    When evacuated = 1: Y' = 4.15 + 0.002(water) → each mL increases urgency by only 0.002<br><br>
+                    Conclusion: Water consumption matters more for predicting urgency when the person hasn't recently evacuated.
+                </div>
+
+                <h3>Centering</h3>
+                <p>When you have interaction or non-linear terms, <strong>center</strong> your continuous predictors by subtracting a meaningful reference value (usually the mean or a round number near the mean). Centering:</p>
+                <ul>
+                    <li>Makes the intercept meaningful (Y' when X is at its average)</li>
+                    <li>Can reduce collinearity between X and the X² or interaction term</li>
+                    <li>Does NOT change R², overall model fit, or the significance of the centered variable itself</li>
+                </ul>
+
+                <h3>PROCESS Macro</h3>
+                <p>For complex moderation models (especially with continuous moderators), use Andrew Hayes' PROCESS macro. It automatically calculates the interaction term, uses bootstrapping for robust inference, and reports conditional effects at meaningful values of the moderator.</p>
+
+                <div class="key-point">
+                    <strong>When to use moderation:</strong> You have a theoretical reason to believe the relationship between two variables changes across levels of a third. Don't go hunting for interactions without theory — with multiple tests, you'll find spurious ones.
+                </div>
+            `,
+            exercises: [
+                {
+                    question: 'You have a 4-level categorical variable (device type: phone, tablet, laptop, desktop). How many dummy variables do you need to include in the regression?',
+                    options: [
+                        '4 dummy variables',
+                        '3 dummy variables',
+                        '2 dummy variables',
+                        '1 dummy variable'
+                    ],
+                    correct: 1,
+                    feedback: {
+                        correct: 'Correct! For j levels, you need j − 1 = 4 − 1 = 3 dummy variables. One level becomes the reference group (coded 0 on all dummies), and each dummy codes whether a case is in that group vs. the reference.',
+                        incorrect: 'For a categorical variable with j levels, you create j − 1 dummy variables. One level serves as the reference group and is always 0.'
+                    }
+                },
+                {
+                    question: 'In a moderation analysis, the coefficient for variable X (b₁) has a different meaning than in a simple main-effects model. In the moderation model, b₁ represents:',
+                    options: [
+                        'The average effect of X across all values of the moderator',
+                        'The simple effect of X when the moderator M = 0',
+                        'The combined effect of X and M on Y',
+                        'The interaction between X and M'
+                    ],
+                    correct: 1,
+                    feedback: {
+                        correct: 'Correct! With an interaction term in the model, b₁ is the effect of X specifically when M = 0 (the reference value). This is why centering matters — it controls what "M = 0" actually means.',
+                        incorrect: 'In a moderation model, b₁ is no longer the average effect of X. It\'s the simple effect of X when M = 0 — which is why centering around a meaningful value is so important.'
+                    }
+                }
+            ]
+        },
+        {
+            id: 'stats-8',
+            title: 'Non-linear Regression',
+            duration: '25 min',
+            description: 'Model curved relationships by adding polynomial terms',
+            content: `
+                <h2>Non-linear Regression</h2>
+
+                <h3>When Linear Models Fail</h3>
+                <p>Linear regression assumes a straight-line relationship. But many real-world relationships are curved. You can detect this by inspecting a plot of predicted values vs. residuals — if the residuals show a curved pattern (higher errors in the middle, lower at the extremes), a linear model is missing something.</p>
+
+                <h3>Polynomial Regression</h3>
+                <p>Non-linear models are actually still <em>linear models</em> — just with non-linear predictors. You add a squared (or higher-power) version of a predictor:</p>
+
+                <div class="key-point">
+                    <strong>Linear:</strong> Y' = b₀ + b₁X<br>
+                    <strong>Quadratic (non-linear):</strong> Y' = b₀ + b₁X + b₂X²<br><br>
+                    To create X², z-transform X first (standardize it), then square the z-score. This reduces collinearity between X and X².
+                </div>
+
+                <h3>The Yerkes-Dodson Law</h3>
+                <p>A classic example of an inverted-U relationship: performance increases with arousal/motivation up to an optimal point, then decreases as stress becomes debilitating. This can't be captured by a straight line.</p>
+
+                <div class="example">
+                    <strong>Study example:</strong> Rock Band drummers played a difficult song with varying financial incentives ($1 to $1,000,000).<br><br>
+                    Linear model: R² = .004, p = .657 — terrible fit<br>
+                    Adding motivation²: R²change = .853, F(1,47) = 218.80, p &lt; .001<br><br>
+                    Centered model: Performance' = 79 − 0.4(motivation) − 18.8(motivation²)<br>
+                    At average motivation: predicted 79% accuracy<br>
+                    At ±1 SD from average: performance drops to about 60%
+                </div>
+
+                <h3>Sequential Testing Strategy</h3>
+                <p>Start with the linear model. If residuals show a curved pattern, add the squared term in a <strong>sequential regression</strong> (Block 1 = X, Block 2 = X²). The ΔR² and its significance tell you whether the quadratic term meaningfully improves model fit.</p>
+
+                <h3>Interpreting Non-linear Models</h3>
+                <p>Individual beta weights for quadratic models are non-intuitive (the sign of b₁ alone doesn't tell you much). <strong>Always graph the relationship.</strong> The significance of the squared term justifies presenting a curved pattern in a plot.</p>
+
+                <p>Centering is especially important here: the intercept should reflect the predicted value at an average (or meaningful) level of the predictor, not when X = 0.</p>
+
+                <h3>APA Write-up</h3>
+                <div class="example">
+                    "A sequential regression examined whether the relationship between motivation and performance was non-linear (quadratic). The linear model fit was poor, R² = .004, F(1,48) = 0.20, p = .657. Adding the squared term significantly improved fit, R²change = .853, F(1,47) = 218.80, p &lt; .001. As shown in Figure 1, an inverted-U pattern describes the data — extremely low and high motivation levels produced poorer performance than moderate motivation."
+                </div>
+
+                <div class="key-point">
+                    <strong>Practical tip:</strong> In UX, non-linear relationships appear in: engagement vs. notification frequency (too many notifications reduce engagement), task complexity vs. satisfaction, feature density vs. usability. Always check the scatter plot before assuming a linear relationship.
+                </div>
+
+                <div class="resources">
+                    <h4>Learn More:</h4>
+                    <a href="https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data" target="_blank">Regression - Khan Academy</a>
+                </div>
+            `,
+            exercises: [
+                {
+                    question: 'You plot predicted values vs. residuals for a regression and notice that residuals are large and negative at low and high predicted values, but near zero in the middle. What does this suggest?',
+                    options: [
+                        'The model is a perfect fit',
+                        'There is heteroscedasticity and you should transform the outcome',
+                        'A linear model is under-predicting at the extremes — a non-linear (quadratic) term might help',
+                        'You have too many outliers and should remove them'
+                    ],
+                    correct: 2,
+                    feedback: {
+                        correct: 'Correct! A U-shaped or inverted-U pattern in the residuals suggests the true relationship is curved, not straight. Adding a squared term (quadratic) is the appropriate fix.',
+                        incorrect: 'A curved pattern in the residuals (not a funnel) is a sign of non-linearity. Adding a squared predictor term to the model is the correct approach.'
+                    }
+                },
+                {
+                    question: 'Why is it recommended to z-transform (standardize) a variable before squaring it for use in a quadratic model?',
+                    options: [
+                        'To make the coefficient for X² always equal to 1',
+                        'To reduce multicollinearity between X and X², and to make the intercept represent the predicted value at the mean',
+                        'Because SPSS can only handle standardized inputs',
+                        'To ensure R² cannot exceed 1'
+                    ],
+                    correct: 1,
+                    feedback: {
+                        correct: 'Correct! When X is on its original scale, X and X² will be highly correlated (collinear). Z-transforming first centers the variable at zero, which makes X and X² uncorrelated and gives the intercept a meaningful interpretation.',
+                        incorrect: 'Z-transforming centers the predictor at zero, which reduces the correlation between X and X² (a collinearity problem) and makes the intercept represent the predicted value at the mean of X.'
+                    }
+                }
+            ]
+        },
+        {
+            id: 'stats-9',
+            title: 'Logistic Regression',
+            duration: '30 min',
+            description: 'Predict binary outcomes using odds ratios and logistic models',
+            content: `
+                <h2>Logistic Regression</h2>
+
+                <h3>When to Use Logistic Regression</h3>
+                <p>Use logistic regression when your <strong>outcome variable is categorical</strong> (binary = two groups; multinomial = 3+ groups). Predicting whether a user converts, churns, clicks, or completes a task are all binary outcomes.</p>
+
+                <p>Why not just use regular regression on a 0/1 variable? Two problems:</p>
+                <ul>
+                    <li>Linear regression can produce predicted "probabilities" outside the 0–1 range</li>
+                    <li>A dichotomous outcome violates the linearity assumption of linear regression</li>
+                </ul>
+
+                <h3>Probability vs Odds</h3>
+                <p>Logistic regression works with <strong>odds</strong>, not raw probabilities.</p>
+
+                <div class="key-point">
+                    <strong>Probability:</strong> P(Y) — ranges from 0 to 1<br>
+                    <strong>Odds:</strong> P(Y) / (1 − P(Y)) — ranges from 0 to ∞<br><br>
+                    If P(Y) = 0.80, odds = 0.80/0.20 = 4 (or "4 to 1")<br>
+                    If P(Y) = 0.50, odds = 1 (equal likelihood)<br>
+                    Odds &gt; 1 = outcome more likely; odds &lt; 1 = outcome less likely
+                </div>
+
+                <div class="example">
+                    <strong>Example (mock jury data):</strong><br>
+                    Males: 40/50 guilty verdicts → P(guilty) = .80, odds = 40/10 = 4.0<br>
+                    Females: 30/50 guilty verdicts → P(guilty) = .60, odds = 30/20 = 1.5<br><br>
+                    Odds Ratio (OR) = 4.0 / 1.5 = 2.67<br>
+                    Interpretation: The odds of a guilty verdict are 2.67 times higher for males than females.
+                </div>
+
+                <h3>Interpreting Coefficients (Exp(B) = Odds Ratio)</h3>
+                <p>In logistic regression output, the regression coefficient B is on the log-odds scale (difficult to interpret). Report <strong>Exp(B)</strong>, which is the odds ratio:</p>
+                <ul>
+                    <li><strong>Exp(B) &gt; 1:</strong> That predictor increases the odds of the outcome</li>
+                    <li><strong>Exp(B) = 1:</strong> No effect</li>
+                    <li><strong>Exp(B) &lt; 1:</strong> That predictor decreases the odds</li>
+                    <li>For a continuous predictor: Exp(B) is the change in odds for each 1-unit increase in the predictor</li>
+                </ul>
+
+                <div class="example">
+                    <strong>Murder trial example:</strong><br>
+                    Evidence strength (weak vs. strong) → Exp(B) = 10.25<br>
+                    Interpretation: The odds of a guilty verdict are 10.25 times greater with strong evidence than with weak evidence.
+                </div>
+
+                <h3>Model Fit</h3>
+                <p>Unlike linear regression, logistic regression doesn't use R². Instead:</p>
+                <ul>
+                    <li><strong>Nagelkerke R²:</strong> Pseudo-R² ranging 0–1. Higher = better fit. Interpreted similarly to R² (but not technically % variance explained).</li>
+                    <li><strong>Model chi-square:</strong> Tests whether the model with predictors fits better than a model with no predictors (the baseline). Significant = your predictors help.</li>
+                    <li><strong>Hosmer-Lemeshow test:</strong> Tests whether your model fits the observed data. You want a non-significant result (p &gt; .05), meaning model and data are consistent.</li>
+                    <li><strong>Classification accuracy:</strong> What % of cases does the model correctly classify? Compare to baseline (% in the majority group).</li>
+                </ul>
+
+                <h3>Assumptions</h3>
+                <ul>
+                    <li>Adequate expected cell frequencies (all &gt; 1, at least 80% &gt; 5) — especially important when all predictors are categorical</li>
+                    <li>No complete/quasi-complete separation (if predictors perfectly predict the outcome, the model becomes unstable)</li>
+                    <li>No severe multicollinearity among predictors</li>
+                </ul>
+
+                <h3>Reporting</h3>
+                <div class="example">
+                    Report: Nagelkerke R², model chi-square (df and p), and for each significant predictor: B, SE, Exp(B), and 95% CI for Exp(B).<br><br>
+                    "A binary logistic regression examined predictors of guilty verdicts. The model fit significantly, χ²(2) = 78.3, p &lt; .001, Nagelkerke R² = .32. Evidence strength was a significant predictor (B = 2.33, SE = 0.35, Exp(B) = 10.25, 95% CI [5.14, 20.43]), with the odds of a guilty verdict being 10.25 times higher with strong vs. weak evidence."
+                </div>
+
+                <div class="key-point">
+                    <strong>UX applications:</strong> Logistic regression is ideal for predicting conversion (purchased/not), churn (churned/retained), task completion (success/failure), or feature adoption (adopted/not) from user characteristics or behavior data.
+                </div>
+
+                <div class="resources">
+                    <h4>Learn More:</h4>
+                    <a href="https://www.khanacademy.org/math/statistics-probability" target="_blank">Statistics and Probability - Khan Academy</a>
+                </div>
+            `,
+            exercises: [
+                {
+                    question: 'In logistic regression, what does Exp(B) = 0.25 mean for a predictor?',
+                    options: [
+                        'The predictor reduces the probability of the outcome by 25%',
+                        'The predictor reduces the odds of the outcome to one-quarter (the outcome is 4× less likely)',
+                        'The predictor is not statistically significant',
+                        'The model explains 25% of variance'
+                    ],
+                    correct: 1,
+                    feedback: {
+                        correct: 'Correct! Exp(B) is the odds ratio. 0.25 means the odds of the outcome are 0.25× as large (i.e., 4 times smaller) for each unit increase in that predictor. The odds decrease by 75%.',
+                        incorrect: 'Exp(B) is the odds ratio. When Exp(B) < 1, the predictor decreases the odds. Exp(B) = 0.25 means the odds are one-quarter as large — the outcome is 4 times less likely per unit increase.'
+                    }
+                },
+                {
+                    question: 'Your logistic regression has Nagelkerke R² = .35, model chi-square p < .001, but Hosmer-Lemeshow p = .03. What\'s the concern?',
+                    options: [
+                        'None — all values indicate an excellent model',
+                        'The Hosmer-Lemeshow test suggests the model\'s predicted values don\'t match the observed data well — poor calibration',
+                        'The model has too many predictors',
+                        'Nagelkerke R² of .35 is too low to be useful'
+                    ],
+                    correct: 1,
+                    feedback: {
+                        correct: 'Correct! Hosmer-Lemeshow tests whether the model\'s predictions match observed frequencies. You want p > .05 (non-significant). A significant result (p = .03) means the model is miscalibrated — its predicted probabilities don\'t match the data well.',
+                        incorrect: 'Hosmer-Lemeshow is a goodness-of-fit test where you want a non-significant result (p > .05). A significant p = .03 indicates poor calibration — the model\'s predicted probabilities don\'t align with actual outcomes.'
+                    }
+                }
+            ]
+        },
+        {
+            id: 'stats-10',
+            title: 'Factor Analysis & PCA',
+            duration: '35 min',
+            description: 'Reduce many variables into meaningful underlying factors',
+            content: `
+                <h2>Factor Analysis & PCA</h2>
+
+                <h3>The Problem: Too Many Variables</h3>
+                <p>Sometimes you have far more variables than you need — survey items, behavioral metrics, test scores. Using them all in regression creates collinearity problems and overfitting. Factor Analysis (FA) / Principal Components Analysis (PCA) provides a solution: <strong>data reduction</strong>.</p>
+
+                <p>Goals:</p>
+                <ul>
+                    <li>Discover the underlying structure (latent variables) in a set of measured variables</li>
+                    <li>Reduce k correlated variables into fewer, uncorrelated factors that still explain most of the variance</li>
+                    <li>Fix multicollinearity by replacing correlated predictors with uncorrelated factor scores</li>
+                </ul>
+
+                <h3>How It Works</h3>
+                <p>Given k variables, PCA creates k new uncorrelated <strong>components (factors)</strong> that explain the same total variance — but redistributed. The first factor captures as much shared variance (communality) as possible, the second captures the next most, and so on.</p>
+
+                <div class="key-point">
+                    <strong>Communality:</strong> How much of a variable's variance is shared with the other variables. PCA extracts and consolidates this communality into a small number of high-value factors. What's left (unique variance) goes into low-value factors that are discarded.
+                </div>
+
+                <h3>Factor Loadings</h3>
+                <p>A <strong>factor loading</strong> is the correlation between an original variable and a factor. High loadings (e.g., |r| > .40) indicate that variable strongly contributes to — and is well explained by — that factor.</p>
+
+                <div class="example">
+                    <strong>NELS data example (16 academic variables → 3 factors):</strong><br><br>
+                    Factor 1 (Academic Achievement): High loadings from all reading, math, science, social studies scores<br>
+                    Factor 2 (Self-Concept): High loadings from self-concept measures at all three grade levels<br>
+                    Factor 3 (Income Expectations): High loading from expected income at age 30<br><br>
+                    These 3 factors collectively explain 68.7% of the variance across all 16 original variables.
+                </div>
+
+                <h3>How Many Factors to Keep?</h3>
+                <p>The most common rule (Kaiser criterion): retain factors with <strong>eigenvalue &gt; 1</strong>. An eigenvalue of 1 means the factor explains as much variance as one average original variable — anything less isn't an improvement.</p>
+
+                <p>Eigenvalue = total variance explained by that factor. With k variables, an eigenvalue of 1 = 1/k of total variance.</p>
+
+                <h3>Checking Assumptions</h3>
+                <p><strong>KMO (Kaiser-Meyer-Olkin):</strong> Measures sampling adequacy. Range: 0–1. Overall KMO &gt; .5 is the minimum; &gt; .8 is good. Check the diagonal of the anti-image correlation matrix for individual variable KMOs — anything &lt; .5 should be removed.</p>
+
+                <p><strong>Bartlett's Test of Sphericity:</strong> Tests whether there are meaningful correlations between the variables. You want significance (p &lt; .05) — this confirms the variables share enough correlation to make factor analysis worthwhile.</p>
+
+                <h3>Rotation</h3>
+                <p>By default, Factor 1 tends to explain a moderate amount of many variables — making interpretation messy. <strong>Rotation</strong> redistributes the loadings to create a "simple structure": each variable loads high on one factor and low on others.</p>
+
+                <p><strong>Varimax rotation</strong> (orthogonal): Factors remain uncorrelated. Good default. Maximizes high and low loadings within each factor.</p>
+
+                <p>Rotation does NOT change eigenvalues or communalities — only factor loadings.</p>
+
+                <h3>Saving Factor Scores</h3>
+                <p>Once you've decided on the number of factors, save each case's <strong>score</strong> on each factor (use Anderson-Rubin method — scores will be standardized, M=0, SD=1, and uncorrelated with each other). These factor scores can then be used as predictors in regression.</p>
+
+                <div class="example">
+                    <strong>Why this is powerful:</strong> Instead of a regression with 16 correlated predictors (collinearity nightmare, R² = .30), use the 3 uncorrelated factor scores as predictors. You get similar R², zero collinearity, and easily interpretable coefficients.
+                </div>
+
+                <h3>APA Reporting</h3>
+                <div class="example">
+                    "A principal component analysis (PCA) was conducted on 16 items with orthogonal rotation (Varimax). KMO = .91 confirmed sampling adequacy; all individual KMO values exceeded .5. Bartlett's test was significant, χ²(120) = 5322.4, p &lt; .001. Three components with eigenvalues &gt; 1 were retained, collectively explaining 68.7% of variance. After rotation, Component 1 represented academic achievement, Component 2 self-esteem, and Component 3 income expectations."
+                </div>
+
+                <div class="key-point">
+                    <strong>UX applications:</strong> Factor analysis is used in survey research to validate scales (e.g., do 10 satisfaction items really measure one construct, or several?), identify key dimensions of user experience, and create reliable composite scores from multiple correlated items.
+                </div>
+
+                <div class="resources">
+                    <h4>Learn More:</h4>
+                    <a href="https://measuringu.com/factor-analysis/" target="_blank">Factor Analysis in Survey Research - MeasuringU</a>
+                    <a href="https://www.khanacademy.org/math/statistics-probability" target="_blank">Statistics Foundation - Khan Academy</a>
+                </div>
+            `,
+            exercises: [
+                {
+                    question: 'You run a PCA on 20 survey items. The Kaiser criterion (eigenvalue > 1) suggests retaining 4 factors, which explain 72% of total variance. What should you do with the remaining 16 factors?',
+                    options: [
+                        'Include all 20 factors since more is better',
+                        'Discard them — they each explain less variance than a single average original item, and most variance is accounted for by the 4 retained factors',
+                        'Rotate them to improve interpretability',
+                        'Only retain 2 factors to keep the model simple'
+                    ],
+                    correct: 1,
+                    feedback: {
+                        correct: 'Correct! The remaining 16 factors each have eigenvalues < 1, meaning they explain less than what a single original variable would. Retaining only the 4 high-value factors gives you most of the variance (72%) with far fewer, uncorrelated variables.',
+                        incorrect: 'Factors with eigenvalues < 1 explain less variance than a single original variable — they\'re not useful. Discard them. The retained factors capture the communality (shared variance); the rest is mostly unique variance from individual items.'
+                    }
+                },
+                {
+                    question: 'After running PCA, you use Varimax rotation. Which of the following does rotation change?',
+                    options: [
+                        'The total variance explained and eigenvalues',
+                        'The communalities for each variable',
+                        'The factor loadings, making them easier to interpret',
+                        'The number of factors extracted'
+                    ],
+                    correct: 2,
+                    feedback: {
+                        correct: 'Correct! Rotation only redistributes the factor loadings to create a simpler structure (high loadings for some variables, near-zero for others). Total variance explained, eigenvalues, and communalities remain unchanged.',
+                        incorrect: 'Rotation changes only the factor loadings — it rearranges which variables load on which factors to improve interpretability. Eigenvalues, communalities, and total variance explained are all preserved.'
+                    }
+                }
+            ]
         }
     ],
 

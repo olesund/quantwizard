@@ -392,6 +392,120 @@ const interactiveChallenges = {
                 explanation: "You need about 350 per group for Cohen's d=0.3 with 80% power at α=0.05. Small effects require large samples! This is why running underpowered studies is common - people don't realize how many users they need. With only 50 per group, you'd have maybe 20% power - you'd miss the effect 80% of the time."
             }
         ]
+    },
+
+    regressionDetective: {
+        id: 'regression-detective',
+        title: 'Regression Detective',
+        description: 'Diagnose regression outputs and choose the right interpretation',
+        difficulty: 'hard',
+        scenarios: [
+            {
+                scenario: "Multiple regression predicting satisfaction: Y' = 2.1 + 0.6(ease) + 0.4(features) − 0.2(price). The standardized Betas are: ease β=0.55, features β=0.20, price β=−0.08 (p=.31).",
+                question: "Which predictor is most important and what should you do about price?",
+                options: [
+                    "Features is most important (highest raw coefficient b=0.4). Remove price immediately.",
+                    "Ease of use is the most important predictor (largest β=0.55). Price is not significant and can be removed if you're building a parsimonious model.",
+                    "Price is most important because it's negative — users hate paying.",
+                    "All three are equally important since they're all in the same model."
+                ],
+                correct: 1,
+                explanation: "Standardized Betas (β) let you compare predictors on a common scale. Ease of use (β=0.55) is by far the strongest driver. The raw coefficient (b) can't be used to compare importance across variables with different scales. Price is not significant (p=.31), so it's not reliably predicting satisfaction in this data — you might remove it for a cleaner model, though theoretical reasons could justify keeping it."
+            },
+            {
+                scenario: "You run a sequential regression. Block 1 (academic variables): R²=0.18. Block 2 (adding demographic variables): R²=0.20, ΔR²=0.02, F(5,400)=2.01, p=.078.",
+                question: "What do you conclude about the demographic variables?",
+                options: [
+                    "Demographics significantly improve the model since R² went up",
+                    "Demographics do NOT significantly improve the model above academics — the ΔR² is small and p=.078 is above the conventional .05 threshold",
+                    "The model is now worse because adding variables always increases error",
+                    "You need to report adjusted R² instead — it will definitely be significant"
+                ],
+                correct: 1,
+                explanation: "In sequential regression, the ΔR² and its F-test tell you whether the added block meaningfully improves fit. Here, adding demographics adds only 2% variance with p=.078 — not significant at the conventional α=.05. Academic variables alone may be sufficient. Note: p=.078 is a judgment call; in exploratory work, some would consider this worth noting."
+            },
+            {
+                scenario: "You run a regression and get Tolerance = 0.08 for one predictor. Another predictor has Tolerance = 0.95.",
+                question: "What does this mean and what should you do?",
+                options: [
+                    "The variable with Tolerance=0.08 is the most important predictor — low tolerance means high contribution",
+                    "The variable with Tolerance=0.08 has severe multicollinearity — 92% of its variance is shared with other predictors. Its coefficient is unstable.",
+                    "Both variables are fine — tolerance is only concerning above 0.5",
+                    "Remove both variables since any tolerance below 1.0 is a problem"
+                ],
+                correct: 1,
+                explanation: "Tolerance represents how much of a variable's variance is NOT explained by other predictors. Tolerance < 0.20 is a red flag for multicollinearity. At 0.08, only 8% of this variable's variance is unique — the other 92% is shared. Its regression coefficient will have a huge standard error (wide CI), making it unstable and untrustworthy. Solutions: remove redundant predictors, use factor scores, or create composite variables."
+            },
+            {
+                scenario: "Residual plot for your regression shows a clear funnel shape: small spread at low predicted values, large spread at high predicted values.",
+                question: "What assumption is violated and what does this mean?",
+                options: [
+                    "Normality — the residuals are skewed. Transform the outcome variable.",
+                    "Homoscedasticity — the variance of residuals is not equal at all predicted values (heteroscedasticity). Results are weakened but not necessarily invalid.",
+                    "Linearity — the relationship between X and Y is curved. Add a squared term.",
+                    "Independence — cases are correlated over time. Use a time-series model."
+                ],
+                correct: 1,
+                explanation: "A funnel shape in the residual plot is the classic signature of heteroscedasticity — unequal variance of residuals across the range of predicted values. This violates the homoscedasticity assumption. Unlike non-linearity (which causes a curved pattern), heteroscedasticity weakens your results but doesn't bias coefficients. It can suggest a missing interaction term or moderating variable."
+            },
+            {
+                scenario: "You have Cook's D values for all 500 participants. Most cluster near 0, but one participant has Cook's D = 2.3.",
+                question: "What should you do?",
+                options: [
+                    "Nothing — Cook's D is only a problem when all values exceed 1",
+                    "Automatically delete the outlier and re-run the analysis",
+                    "Investigate the outlier, run the analysis with and without it, and report both results if it substantially changes conclusions",
+                    "Add more variables to the model to absorb the outlier"
+                ],
+                correct: 2,
+                explanation: "Cook's D > 1 flags an influential outlier. The right response is to investigate: Is this a data entry error? A legitimate unusual case? Run the analysis with and without it. If conclusions change substantially, report both results and discuss the outlier. Automatic deletion is bad practice — outliers often reveal something important about your data."
+            }
+        ]
+    },
+
+    oddsRatioChallenge: {
+        id: 'odds-ratio-challenge',
+        title: 'Odds Ratio Interpreter',
+        description: 'Master probability, odds, and odds ratios from logistic regression',
+        difficulty: 'hard',
+        scenarios: [
+            {
+                scenario: "Logistic regression predicting task completion (1=completed, 0=failed). For 'prior experience': B=1.61, Exp(B)=5.0, 95% CI [2.1, 11.9], p<.001.",
+                question: "How do you correctly interpret Exp(B) = 5.0?",
+                options: [
+                    "Users with prior experience are 5 percentage points more likely to complete the task",
+                    "The odds of completing the task are 5 times higher for users with prior experience",
+                    "Users without experience complete the task 5% of the time",
+                    "Prior experience causes a 5× increase in completion probability"
+                ],
+                correct: 1,
+                explanation: "Exp(B) is the odds ratio. An Exp(B) of 5.0 means the odds of completing the task are 5× higher for users with prior experience vs. without. Note it's odds (not probability). And note we can't say 'causes' without an experiment — logistic regression shows association, not causation."
+            },
+            {
+                scenario: "Your logistic regression baseline model (no predictors) correctly classifies 78% of cases. Your full model correctly classifies 81%. Nagelkerke R² = .09.",
+                question: "What should you conclude about your model?",
+                options: [
+                    "Excellent model — Nagelkerke R² > 0 and classification improved",
+                    "The model adds modest predictive value but the improvement over baseline is small (3%). Evaluate whether the predictors provide meaningful practical value.",
+                    "The model failed since 78% baseline accuracy means users mostly convert anyway",
+                    "Classification accuracy is all that matters — Nagelkerke R² can be ignored"
+                ],
+                correct: 1,
+                explanation: "A 3% improvement in classification and Nagelkerke R²=.09 suggest the predictors add limited predictive power. This doesn't mean the model is useless — significant predictors still tell you about the relationship. But classification accuracy that only modestly exceeds baseline, combined with a small pseudo-R², suggests the model explains little variance in the outcome."
+            },
+            {
+                scenario: "P(conversion) = 0.60 for users who receive email. P(conversion) = 0.40 for users who don't.",
+                question: "What is the odds ratio for email → conversion?",
+                options: [
+                    "1.5 (simply 0.60 / 0.40)",
+                    "2.25 (odds ratio: [0.60/0.40] / [0.40/0.60])",
+                    "0.20 (difference in probabilities)",
+                    "20% (relative improvement)"
+                ],
+                correct: 1,
+                explanation: "Odds for email group: 0.60/0.40 = 1.5. Odds for no-email group: 0.40/0.60 = 0.667. Odds ratio = 1.5/0.667 = 2.25. The odds of conversion are 2.25× higher for email recipients. Note: the odds ratio (2.25) is bigger than the probability ratio (1.5) — odds ratios can overstate the risk ratio when probabilities are far from zero or one."
+            }
+        ]
     }
 };
 

@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(open:*)"
+      "Bash(open:*)",
+      "Bash(brew install *)",
+      "Bash(pdftotext \"/Users/erikolesund/Documents/Claude/Statistics training tool/Statistics slides/Class7Lecture_FactorAnalysis.pdf\" -)",
+      "Bash(pdftotext \"/Users/erikolesund/Documents/Claude/Statistics training tool/Statistics slides/Class8_regression1.pdf\" -)",
+      "Bash(pdftotext \"/Users/erikolesund/Documents/Claude/Statistics training tool/Statistics slides/Class9_regression2.pdf\" -)",
+      "Bash(pdftotext \"/Users/erikolesund/Documents/Claude/Statistics training tool/Statistics slides/Class12LogisticRegression.pdf\" -)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }
